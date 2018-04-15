@@ -1,11 +1,9 @@
 var path = require('path');
-var uglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin=require('clean-webpack-plugin');
 module.exports = {
-    mode: "development",
     entry: './src/js/index.js',
     output: {
         filename: 'bundle.js',
@@ -23,7 +21,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new uglifyJsPlugin(),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html'
